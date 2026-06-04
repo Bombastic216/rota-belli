@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Leaflet popup özelleştirmeleri */
+.leaflet-popup-content-wrapper {
+  border-radius: 14px !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3) !important;
+  font-family: Georgia, serif !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+}
+
+.leaflet-popup-tip {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2) !important;
+}
+
+/* Leaflet z-index düzeltmesi - mobil UI üstünde kalmasın */
+.leaflet-pane {
+  z-index: 1 !important;
+}
+.leaflet-top, .leaflet-bottom {
+  z-index: 2 !important;
+}
+
+/* Harita container scroll bar */
+.leaflet-container {
+  font-family: Georgia, serif !important;
+}

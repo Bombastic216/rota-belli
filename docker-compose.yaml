@@ -1,0 +1,12 @@
+services:
+  rota-belli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rota-belli
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    labels:
+      - "app=rota-belli"
+      - "description=İstanbul doğa aktiviteleri rota uygulaması"
