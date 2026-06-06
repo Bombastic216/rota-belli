@@ -9,8 +9,13 @@ export default defineConfig({
       '/api/csbs': {
         target: 'https://csbsapi.saglik.gov.tr',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/csbs/, '/api/app/portal-public'),
         secure: false,
+        configure: (proxy) => {
+          proxy.on('proxyReq', (proxyReq) => {
+            // Cookie forward
+            proxyReq.setHeader('Accept', 'application/json');
+          });
+        },
       },
     },
   },
