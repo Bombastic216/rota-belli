@@ -6,11 +6,13 @@ import PanelKesif from './components/explore/PanelKesif';
 import PanelRotalar from './components/explore/PanelRotalar';
 import PanelHarita from './components/map/PanelHarita';
 import PanelProfil from './components/profile/PanelProfil';
+import PanelYuzmeSuyu from './components/yuzme/PanelYuzmeSuyu';
 
 // Navigasyon tanımı — Rezervasyon kaldırıldı (sonra eklenecek)
 const NAV = [
   { id: 'kesif',   icon: '🧭', label: 'Keşfet',  color: '#0096c7' },
   { id: 'rotalar', icon: '🥾', label: 'Rotalar',  color: '#52b788' },
+  { id: 'yuzme',   icon: '🏊', label: 'Yüzme',    color: '#4cc9f0' },
   { id: 'harita',  icon: '🗺️', label: 'Harita',   color: '#52b788' },
   { id: 'profil',  icon: '👤', label: 'Profil',   color: '#f72585' },
 ];
@@ -82,6 +84,7 @@ export default function App() {
         <main style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
           <PanelKesif visible={aktif === 'kesif'} />
           <PanelRotalar visible={aktif === 'rotalar'} />
+          <PanelYuzmeSuyu visible={aktif === 'yuzme'} />
           <PanelHarita visible={aktif === 'harita'} />
           <PanelProfil visible={aktif === 'profil'} />
         </main>

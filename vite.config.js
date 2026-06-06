@@ -4,4 +4,14 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      '/api/csbs': {
+        target: 'https://csbsapi.saglik.gov.tr',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/csbs/, '/api/app/portal-public'),
+        secure: false,
+      },
+    },
+  },
 })
